@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  min-height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.game-list::after {
+  display: block;
+  clear: both;
+  content: ' ';
+}
+
+@media (min-width: 450px) and (max-width: 999px) {
+  .game-list li {
+    float: left;
+    width: 50%;
+  }
+
+  .game-list li:nth-child(2n+1) {
+    clear: left;
+  }
+
+  .game-list li:nth-child(2n+2) {
+    float: right;
+  }
+}
+
+@media (min-width: 1000px) {
+  .game-list li {
+    float: left;
+    width: 25%;
+  }
+}
