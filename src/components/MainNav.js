@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import './MainNav.css';
 
 function mapStateToProps(state) {
   return {
@@ -10,9 +11,13 @@ function mapStateToProps(state) {
 
 function MainNav({ games }) {
   return (
-    <nav className="site-nav">
-      {games.data.map(game => (
-        <Link key={game.id} to={`/game/${game.attributes.field_game_slug}`}>
+    <nav className="main-nav">
+      {games.data.filter(game => game.attributes.field_main_menu).map(game => (
+        <Link
+          className="main-nav-link"
+          key={game.id}
+          to={`/game/${game.attributes.field_game_slug}`}
+        >
           {game.attributes.title}
         </Link>
       ))}

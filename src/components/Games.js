@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 function mapStateToProps(state) {
   return {
@@ -12,9 +13,10 @@ function Games({ games }) {
     <ul className="game-list">
       {games.data.map(game => (
         <li key={game.id}>
-          <h3>{game.attributes.title}</h3>
-          <div dangerouslySetInnerHTML={{ __html: game.attributes.body.value }} />
-          <a href={game.attributes.field_game_link.uri}>Visit site</a>
+          <h3><Link to={`/game/${game.attributes.field_game_slug}`}>{game.attributes.title}</Link></h3>
+          <div
+            dangerouslySetInnerHTML={{ __html: game.attributes.body.value }}
+          />
         </li>
       ))}
     </ul>

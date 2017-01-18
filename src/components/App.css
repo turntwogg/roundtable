@@ -1,5 +1,7 @@
-.App {
-  text-align: center;
+.App-logo-link {
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
 }
 
 .App-logo {
@@ -8,19 +10,38 @@
 }
 
 .App-header {
+  margin-bottom: 24px;
+  padding: 0 16px;
   background-color: #222;
-  min-height: 150px;
-  padding: 20px;
   color: white;
+}
+
+@media (min-width: 750px) {
+  .App-header {
+    display: flex;
+    align-items: center;
+  } 
 }
 
 .App-intro {
   font-size: large;
 }
 
+.App-main {
+  max-width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.layout-spacer {
+  flex: 1 auto;
 }
 
 .game-list::after {
@@ -29,10 +50,14 @@
   content: ' ';
 }
 
-@media (min-width: 450px) and (max-width: 999px) {
+.game-list li {
+  margin-bottom: 24px;
+}
+
+@media (min-width: 500px) and (max-width: 999px) {
   .game-list li {
     float: left;
-    width: 50%;
+    width: 48%;
   }
 
   .game-list li:nth-child(2n+1) {
@@ -47,6 +72,16 @@
 @media (min-width: 1000px) {
   .game-list li {
     float: left;
-    width: 25%;
+    width: 31%;
+    margin-right: 1%;
+  }
+
+  .game-list li:nth-child(3n+3) {
+    margin-right: 0;
+    float: right;
+  }
+
+  .game-list li:nth-child(3n+4) {
+    clear: both;
   }
 }

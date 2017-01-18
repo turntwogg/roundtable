@@ -9,13 +9,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
-          <h2>RoundTable</h2>
-          <h3>Your Digital Card Game specialists</h3>
+        <header className="App-header">
+          <Link to="/" className="App-logo-link">
+            <img src={logo}className="App-logo" alt="logo" />
+            <span>RoundTable</span>
+          </Link>
+          <div className="layout-spacer" />
           <MainNav />
-        </div>
-        {this.props.children || <Games />}
+        </header>
+        <main className="App-main">
+          {this.props.children || <Games />}
+        </main>
       </div>
     );
   }
